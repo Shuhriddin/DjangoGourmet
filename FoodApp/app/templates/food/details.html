@@ -1,0 +1,34 @@
+{% extends 'food/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+
+<body>
+    {% block body %}
+    <div class="card-container">
+        <div class="card">
+            <img src="{{ object.image_food.url }}" alt="#">
+            <div class="card-content">
+                <div class="card-box">
+                    <h1>{{ object.name_food }}</h1>
+                    <h3>Type food: {{ object.type_food }}</h3>
+                    <span class="detais-price">Price food: {{ object.price_food }}</span>
+                    <br>
+                    <p class="descr">{{ object.description_food }}</p>
+                    <br>
+                    <a class="btn" href="{% url 'index' %}">Home</a>
+                    <a class="btn" href="{% url 'update' object.id %}">Edit</a>
+                    <a href="{% url 'delete' object.id %}" class="btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{% extends 'food/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+</head>
+
+<body>
+    {% block body %}
+    <div class="container-fm">
+        <form method="POST">
+            {% csrf_token %}
+            <img src="{{ food.image_food.url }}" alt="#" width="250px" height="150px">
+            <h1 class="btn-del-title">Are you sure delete "{{ food.name_food }}"</h1>
+            <div class="btn-box">
+                <button class="btn-del" type="submit">Confirm</button>
+                <a href="{% url 'index' %}" class="btn-back">Back</a>
+            </div>
+        </form>
+    </div>
+</body>
+{% endblock %}
+
+</html>

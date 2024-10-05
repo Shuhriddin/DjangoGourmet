@@ -1,0 +1,25 @@
+{% extends 'food/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="profile-body">
+    {% block body %}
+    <div class="container-profile">
+        <div class="profile-img">
+            <h1 class="prof-title">{{ user.username }}</h1>
+            <span class="prof-span">{{ user.email }}</span>
+            <img class="prof-pic" src="{{ user.profile.image.url}}" width="100px" height="100px" />
+        </div>
+    </div>
+    {% endblock %}
+
+</body>
+
+</html>

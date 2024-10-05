@@ -1,0 +1,96 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+.btn {
+    padding: 10px 20px;
+    background: #069431;
+    border-radius: 15px;
+}
+/* register */
+.container-register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.register-form {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 45px;
+    box-shadow: 0 0 20px 5px rgba(0,0,0,.4);
+    border-radius: 5%;
+    background: transparent;
+    background: #212529be;
+}
+.register-form h1 {
+    color: rgb(35, 255, 237);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.register-form label {
+    font-size: 18px;
+    margin-bottom: 3px;
+    color: rgb(82, 255, 140);
+}
+.register-form input {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    background: #c2c2c25f;
+    color: #ffffff;
+    /* border: 1px solid #000; */
+}
+.register-form input:active {
+    border: none;
+    outline: none;
+}
+.register-form input:focus {
+    border: none;
+    outline: none;
+    border: 1px solid transparent;
+}
+
+.register-form input:last-child {
+    margin-bottom: 15px;
+}
+.register-btn {
+    border: none;
+    background: #18b346;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.register-form a {
+    color: #fff;
+}
+
+/* /* login */
+.login-form {
+    background: url(./images/01.jpg);
+}
+.register-body {
+    background: url(./images/02.jpg);
+}
+
+/* profile */
+.profile-body {
+    background: url(./images/01.jpg);
+}

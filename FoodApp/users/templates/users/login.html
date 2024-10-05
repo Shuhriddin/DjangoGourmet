@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'users/style.css' %}">
+</head>
+
+<body class="login-form">
+    <div class="container-register">
+        <form method="POST" class="register-form">
+            <h1>Login</h1>
+            {% csrf_token %}
+            {% for item in form %}
+            {{ item.label_tag }}
+            {{ item }}
+            {% endfor %}
+            <button type="submit" class="register-btn btn">Sign in</button>
+            <a href="{% url 'register' %}">Register</a>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+{% extends 'food/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Index</title>
+</head>
+
+<body>
+    {% block body %}
+
+    <div class="card-container">
+        {% for line in food %}
+        <div class="card">
+            <img src="{{ line.image_food.url }}" alt="">
+            <div class="card-content">
+                <div class="card-box">
+                    <h2>name food: {{ line.name_food }}</h2>
+                    <h3>type food: {{ line.type_food }}</h3>
+                    <span>price food: {{ line.price_food }} $</span>
+                    <code>{{ line.user_name }}</code>
+                    <br>
+                    <a class="btn" href="{% url 'details' line.id %}">Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="container-paginator">
+        {% if page_obj.has_other_pages %}
+        <nav class="nav">
+            <ul class="nav-list-pages">
+                {% if page_obj.has_previous %}
+                <li class="page-num">
+                    <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+                </li>
+                {% endif %}
+                {% for p in page_obj.paginator.page_range %}
+                {% if page_obj.number == p %}
+                <li class="page-num page-num-selected">{{ p }}</li>
+                {% else %}
+                <li class="page-num">
+                    <a href="?page={{ p }}">{{ p }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-num">
+                    <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+    {% endblock %}
+
+</body>
+
+</html>
