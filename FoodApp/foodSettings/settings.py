@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'app.apps.AppConfig',
     'users.apps.UsersConfig',
     'django.contrib.admin',
@@ -118,6 +119,7 @@ import os
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'app/static'),
@@ -133,3 +135,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# JAZZMIN SETTINGS
+JAZZMIN_UI_TWEAKS = {
+    "theme": "slate",
+}
